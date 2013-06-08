@@ -68,6 +68,15 @@ body {
 h1{
 	font-size: 5em;
 	border-bottom: 5px solid black;
+	text-align: center;
+	font-weight: bold;
+}
+
+div.feed{
+	text-align: right;
+	position: relative;
+	top:-3em;
+	right: 1em;
 }
 
 audio{
@@ -84,13 +93,15 @@ article header{
 }
 
 article header img{
-	float:left;
-	max-width: 200px;
-	margin-right: 1em;
+	margin: auto;
+	max-width: 300px;
+	border:2px solid grey;
+	display: block;
 }
 
 article header h2{
-	display: inline;
+	display: block;
+	text-align: center;
 }
 
 h4{
