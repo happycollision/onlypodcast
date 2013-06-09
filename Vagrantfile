@@ -49,6 +49,11 @@ sudo apt-get -y install build-essential zlib1g-dev git-core sqlite3 libsqlite3-d
 # cd /vagrant
 # bundle
 
+# Then add the following to your Gemfile:
+# gem 'execjs'
+# gem 'therubyracer', :require => 'execjs'
+# Save, and run 'bundle install' once more.
+
 SCRIPT
   
   config.vm.provision :shell, :inline => $script
