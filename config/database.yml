@@ -19,7 +19,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: mysql2
+  encoding: utf8
+  database: happycol_opprod
   pool: 5
-  timeout: 5000
+  username: happycol_only
+  password: ka0uaYq-f+AEQbOMpVQfvt1x8/DJVbrEzrLkajrr8pTRCCL8DA
+  socket: /tmp/mysql.sock
