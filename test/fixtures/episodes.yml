@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  number: 1
+  date: 2013-06-10 03:53:58
+  show_notes: MyText
+  file_location: MyString
+  file_size: 1
+  duration: 1
+  art_location: MyString
+  description: MyText
+  keywords: MyString
+  podcast_id: 1
+
+two:
+  title: MyString
+  number: 1
+  date: 2013-06-10 03:53:58
+  show_notes: MyText
+  file_location: MyString
+  file_size: 1
+  duration: 1
+  art_location: MyString
+  description: MyText
+  keywords: MyString
+  podcast_id: 1

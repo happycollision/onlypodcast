@@ -1,0 +1,29 @@
+<h1>Listing personalities</h1>
+
+<table>
+  <tr>
+    <th>First</th>
+    <th>Last</th>
+    <th>Bio</th>
+    <th>Image</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @personalities.each do |personality| %>
+  <tr>
+    <td><%= personality.first %></td>
+    <td><%= personality.last %></td>
+    <td><%= personality.bio %></td>
+    <td><%= personality.image %></td>
+    <td><%= link_to 'Show', personality %></td>
+    <td><%= link_to 'Edit', edit_personality_path(personality) %></td>
+    <td><%= link_to 'Destroy', personality, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Personality', new_personality_path %>
