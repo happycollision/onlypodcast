@@ -15,5 +15,6 @@ class CreateEpisodes < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index(:episodes,:podcast_id)
   end
 end

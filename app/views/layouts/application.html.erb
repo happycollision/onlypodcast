@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-  <title>The Only Podcast on the Internet</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  
+  <title>The Only Podcast on the Internet<%= @page_title ? ' - ' + @page_title : '' %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  
+
+<meta property='og:image' content='<%= @page_image ? @page_image : $site_image %>' />
+<meta property='og:url' content='<%= request.protocol+request.host_with_port+request.fullpath %>' />
+<meta property='og:title' content='The Only Podcast on the Internet<%= @page_title ? ': ' + @page_title : '' %>' />
+<meta property='og:description' content='<%= @page_description ? strip_tags(@page_description) : "The Only Podcast on the Internet is an interview-style show featuring people involved in interesting projects, usually categorized under the giant umbrella of \"Art\". Hosted by Don Denton." %>' />
 
 <script>
 /*
@@ -21,6 +30,9 @@
 </head>
 <body>
 	<header><h1>The Only Podcast on the Internet</h1></header>
+    <div class="feed"><a href="http://theonlypodcastontheinternet.com/feeds/onlypodcast">Subscribe to the show</a></div>
+    <div class="feed"><a href="https://itunes.apple.com/us/podcast/only-podcast-on-internet/id659738651?mt=2">Subscribe in iTunes</a></div>
+	
 	<%= link_to "All Episodes", episodes_path %>
 	<div class="feed"><%# Link to the feed %></div>
 
@@ -29,3 +41,6 @@
 
 </body>
 </html>
+
+
+

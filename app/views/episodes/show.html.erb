@@ -1,28 +1,30 @@
-<p id="notice"><%= notice %></p>
+<% 
+	@page_title = @episode.title 
+	@page_description = @episode.description
+%>
+<article>
 
-<p>
-  <b>Title:</b>
-  <%= @episode.title %>
-</p>
+<header class="clearfix">
+	<h2>Episode <%= @episode.number %>: <%= @episode.title %></h2>
+    <img src="<%= @episode.art_location %>" />
+</header>
 
-<p>
-  <b>Number:</b>
-  <%= @episode.number %>
-</p>
+
+<audio controls>
+  <source src="<%= @episode.file_location %>" type="audio/mpeg">
+Your browser does not support the audio element. <a href="<%= @episode.file_location %>">Download the file</a> instead.
+</audio>
+<a href="<%= @episode.file_location %>">Download File</a>
 
 <p>
   <b>Date:</b>
-  <%= @episode.date %>
+  <%= @episode.date.to_s(:long) %>
 </p>
 
 <p>
   <b>Show notes:</b>
-  <%= @episode.show_notes %>
-</p>
-
-<p>
-  <b>File location:</b>
-  <%= @episode.file_location %>
+  <%= @episode.description.html_safe %>
+  <%= @episode.show_notes.html_safe %>
 </p>
 
 <p>
@@ -36,16 +38,6 @@
 </p>
 
 <p>
-  <b>Art location:</b>
-  <%= @episode.art_location %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @episode.description %>
-</p>
-
-<p>
   <b>Keywords:</b>
   <%= @episode.keywords %>
 </p>
@@ -55,6 +47,8 @@
   <%= @episode.podcast_id %>
 </p>
 
+
+</article>
 
 <%= link_to 'Edit', edit_episode_path(@episode) %> |
 <%= link_to 'Back', episodes_path %>
