@@ -7,6 +7,18 @@ Vagrant::Application.routes.draw do
 
   get "home/index"
 
+  match 'all' => 'episodes#index'
+  
+  match ':episode_num' => 'episodes#show'
+  
+  #match 'id/:id' => 'episodes#inspect'
+  
+  #This doesn't work. I'll have to fix it someday if I ever launch another podcast... it needs to be a fallback for the one above...
+  # match ':podcast_slug' => 'podcasts#index' 
+  
+  # Another structure for the site if I ever have more than one podcast
+  # match ':podcast_slug/:episode_num' => 'episodes#complex_route'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -56,7 +68,7 @@ Vagrant::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
+  root :to => 'episodes#home'
 
   # See how all your routes lay out with "rake routes"
 
