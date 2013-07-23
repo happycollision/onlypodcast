@@ -29,6 +29,9 @@
 </script>    
 </head>
 <body>
+	<% if !flash[:notice].blank? do %>
+		<div class="notice"><%= flash[:notice] %>
+	<% end %>
 	<header><h1>The Only Podcast on the Internet</h1></header>
     <div class="feed"><a href="http://theonlypodcastontheinternet.com/feeds/onlypodcast">Subscribe to the show</a></div>
     <div class="feed"><a href="https://itunes.apple.com/us/podcast/only-podcast-on-internet/id659738651?mt=2">Subscribe in iTunes</a></div>
