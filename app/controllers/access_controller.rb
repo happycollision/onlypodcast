@@ -1,4 +1,7 @@
 class AccessController < ApplicationController
+  
+  before_filter :confirm_logged_in, :except => [:login, :attempt_login, :logout]
+  
   def index
   	menu
   	render("menu")
@@ -15,6 +18,10 @@ class AccessController < ApplicationController
   def attempt_login
   	authorized_user = AdminUser.authenticate(params[:username],params[:password])
   	if authorized_user
+			# Mark user as logged in
+  		session[:user_id] = authorized_user.id
+  		session[:username] = authorized_user.username
+  		
   		flash[:notice] = "Well done."
   		redirect_to(:action => 'menu')
   	else
@@ -25,8 +32,13 @@ class AccessController < ApplicationController
   end
   
   def logout
-  
+		# Mark user as logged out
+		session[:user_id] = nil
+		session[:username] = nil
+
   	flash[:notice] = "Bye."
   	redirect_to(:action => 'login')
   end
+  
+  
 end

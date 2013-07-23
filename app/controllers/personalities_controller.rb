@@ -1,4 +1,8 @@
 class PersonalitiesController < ApplicationController
+
+  before_filter :confirm_logged_in, :except => [:index, :show]
+
+
   # GET /personalities
   # GET /personalities.json
   def index

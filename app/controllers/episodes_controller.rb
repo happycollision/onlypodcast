@@ -1,4 +1,8 @@
 class EpisodesController < ApplicationController
+	
+	before_filter :confirm_logged_in, :except => [:list, :home, :feature]
+
+
   # GET /episodes
   # GET /episodes.json
   def index

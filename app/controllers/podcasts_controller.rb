@@ -1,4 +1,8 @@
 class PodcastsController < ApplicationController
+
+  before_filter :confirm_logged_in, :except => [:index, :show]
+
+
   # GET /podcasts
   # GET /podcasts.json
   def index
