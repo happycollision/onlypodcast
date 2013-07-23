@@ -1,8 +1,9 @@
 require 'digest/sha1'
 class AdminUser < ActiveRecord::Base
+  
   attr_protected :salt, :hashed_password
   
-  attr_accessor :password
+  attr_accessor :password # automatically creates read and write methods for AdminUser.password instance variable
 
   # Need form validations here
 
@@ -14,6 +15,10 @@ class AdminUser < ActiveRecord::Base
   after_save :clear_password
   
 
+  def name
+  	"#{first} #{last}"
+  end
+  
   def self.make_salt(username='')
   	Digest::SHA1.hexdigest("Use #{username} with #{Time.now} to make salt")
   end
