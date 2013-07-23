@@ -1,4 +1,4 @@
-Vagrant::Application.routes.draw do
+Onlypodcast::Application.routes.draw do
 	match 'admin', :to => 'access#menu'
   
   resources :personalities

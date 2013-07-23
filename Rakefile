@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Vagrant::Application.load_tasks
+Onlypodcast::Application.load_tasks
