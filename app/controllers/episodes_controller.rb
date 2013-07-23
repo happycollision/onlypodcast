@@ -2,7 +2,16 @@ class EpisodesController < ApplicationController
   # GET /episodes
   # GET /episodes.json
   def index
-    @episodes = Episode.all
+    @episodes = Episode.all.reverse
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @episodes }
+    end
+  end
+
+  def list
+    @episodes = Episode.all.reverse
 
     respond_to do |format|
       format.html # index.html.erb
@@ -12,12 +21,10 @@ class EpisodesController < ApplicationController
 
   def home
     @episode = Episode.last
-    render :action => "show"
+    render :action => "feature"
   end
 
-  # GET /1
-  # GET /1.json
-  def show
+  def feature
     @episode = Episode.where(:number => params[:episode_num])[0]
 
     respond_to do |format|
@@ -25,18 +32,18 @@ class EpisodesController < ApplicationController
       format.json { render :json => @episode }
     end
   end
- 
-  # GET episodes/1
-  # GET episodes/1.json
-  def inspect
+
+  # GET /id/1
+  # GET /id/1.json
+  def show
     @episode = Episode.find(params[:id])
 
     respond_to do |format|
-      format.html # inspect.html.erb
+      format.html # show.html.erb
       format.json { render :json => @episode }
     end
   end
-
+ 
   # GET /episodes/new
   # GET /episodes/new.json
   def new

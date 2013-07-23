@@ -1,0 +1,23 @@
+<h2>Listing episodes</h2>
+
+<table>
+  <tr>
+    <th></th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Date</th>
+  </tr>
+
+<% @episodes.each do |episode| %>
+  <tr>
+    <td><img src="<%= episode.art_location %>" height="75" width="75" /></td>
+    <td><a href="http://<%= request.host_with_port+'/'+episode.number.to_s %>">Ep. <%= episode.number %>: <%= episode.title %></a><br />Duration: <%= episode.duration %></td>
+    <td width="60%"><%= episode.description.html_safe %></td>
+    <td><%= episode.date.to_s(:xshort) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Episode', new_episode_path %>

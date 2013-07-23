@@ -3,15 +3,15 @@ Vagrant::Application.routes.draw do
 
   resources :podcasts
 
-  resources :episodes
+  resources :episodes, :path => 'id'
 
   get "home/index"
 
-  match 'all' => 'episodes#index'
+  get 'all' => 'episodes#list'
   
-  match ':episode_num' => 'episodes#show'
-  
-  #match 'id/:id' => 'episodes#inspect'
+  get ':episode_num', to: 'episodes#feature'
+    
+  # match 'id/:id', to: 'episodes#inspect', as: 'episode'
   
   #This doesn't work. I'll have to fix it someday if I ever launch another podcast... it needs to be a fallback for the one above...
   # match ':podcast_slug' => 'podcasts#index' 
