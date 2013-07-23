@@ -29,8 +29,8 @@
 </script>    
 </head>
 <body>
-	<% if !flash[:notice].blank? do %>
-		<div class="notice"><%= flash[:notice] %>
+	<% if !flash[:notice].blank? %>
+		<div class="notice"><%= flash[:notice] %></div>
 	<% end %>
 	<header><h1>The Only Podcast on the Internet</h1></header>
     <div class="feed"><a href="http://theonlypodcastontheinternet.com/feeds/onlypodcast">Subscribe to the show</a></div>

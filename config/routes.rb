@@ -1,4 +1,6 @@
 Vagrant::Application.routes.draw do
+	match 'admin', :to => 'access#menu'
+  
   resources :personalities
 
   resources :podcasts
