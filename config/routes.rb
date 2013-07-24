@@ -1,6 +1,8 @@
 Onlypodcast::Application.routes.draw do
 		
 	match 'admin', :to => 'access#menu'
+    
+  match 'feeds/:slug', :to => 'feeds#show'
   
   resources :personalities
 
