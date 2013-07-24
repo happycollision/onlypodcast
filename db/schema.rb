@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130723022132) do
+ActiveRecord::Schema.define(:version => 20130724011133) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20130723022132) do
     t.text     "show_notes"
     t.string   "file_location"
     t.integer  "file_size"
-    t.integer  "duration"
+    t.string   "duration"
     t.string   "art_location"
     t.text     "description"
     t.string   "keywords"
