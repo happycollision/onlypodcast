@@ -16,3 +16,6 @@
 
 # DSStore?
 *.DS_Store
+
+# Media Files in media folder
+/public/files
