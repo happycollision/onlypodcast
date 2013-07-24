@@ -21,8 +21,8 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: happycol_opprod
+  database: onlypodcast_production
   pool: 5
-  username: happycol_only
-  password: ka0uaYq-f+AEQbOMpVQfvt1x8/DJVbrEzrLkajrr8pTRCCL8DA
-  socket: /tmp/mysql.sock
+  username: happycol_op
+  password: uNLRjW7MNQ6WypyyNsT6ns9XPQPBAobzvQ2dyfkVLXhcFBZqzd
+  socket: /var/run/mysqld/mysqld.sock

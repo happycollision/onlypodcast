@@ -40,4 +40,4 @@ gem 'jquery-rails'
 
 gem 'execjs'
 gem 'therubyracer', :require => 'execjs'
-gem 'activerecord-mysql2-adapter'
+gem 'mysql2'
