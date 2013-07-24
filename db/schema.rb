@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130724011133) do
+ActiveRecord::Schema.define(:version => 20130724015701) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first"
@@ -29,15 +29,15 @@ ActiveRecord::Schema.define(:version => 20130724011133) do
     t.integer  "number"
     t.datetime "date"
     t.text     "show_notes"
-    t.string   "file_location"
+    t.string   "file_name"
     t.integer  "file_size"
     t.string   "duration"
-    t.string   "art_location"
+    t.string   "art_name"
     t.text     "description"
     t.string   "keywords"
     t.integer  "podcast_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   add_index "episodes", ["podcast_id"], :name => "index_episodes_on_podcast_id"

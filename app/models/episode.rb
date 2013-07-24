@@ -2,5 +2,15 @@ class Episode < ActiveRecord::Base
   
   belongs_to :podcast
   
-  attr_accessible :art_location, :date, :description, :duration, :file_location, :file_size, :keywords, :number, :podcast_id, :show_notes, :title
+  attr_protected []
+
+	def file_location
+		"http://#{HOSTNAME}/files/#{podcast.slug}/#{file_name}"
+		
+	end
+	
+	def art_location
+		"http://#{HOSTNAME}/files/#{podcast.slug}/#{art_name}"
+	end
+	
 end

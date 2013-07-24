@@ -6,23 +6,21 @@
 
 <header class="clearfix">
 	<h2>Episode <%= @episode.number %>: <%= @episode.title %></h2>
-    <img src="<%= @episode.art_location %>" />
+	<date><%= @episode.date.to_s(:long) %></date>
+
+  <img src="<%= @episode.art_location %>" />
 </header>
 
 
 <audio controls>
   <source src="<%= @episode.file_location %>" type="audio/mpeg">
-Your browser does not support the audio element. <a href="<%= @episode.file_location %>">Download the file</a> instead.
+Your browser does not support the audio element. Download the file via the link below instead.
 </audio>
 <a href="<%= @episode.file_location %>">Download File</a>
 
-<p>
-  <b>Date:</b>
-  <%= @episode.date.to_s(:long) %>
-</p>
 
+<h3>Show notes:</h3>
 <p>
-  <b>Show notes:</b>
   <%= @episode.description.html_safe %>
   <%= @episode.show_notes.html_safe %>
 </p>

@@ -94,7 +94,12 @@ article{
 article header{
 	margin-bottom: 1em;
 }
-
+article header date{
+	text-align: center;
+	display: block;
+	margin-top: -1.5em;
+	margin-bottom: 1.5em;
+}
 article header img{
 	margin: auto;
 	max-width: 300px;
@@ -114,7 +119,6 @@ h4{
 p{
 	margin-top: 0;
 }
-
 
 
 
