@@ -1,0 +1,34 @@
+<article>
+
+<header class="clearfix">
+	<h2><%= link_to "Episode #{episode.number}: #{episode.title}", feature_path(episode.number)%></h2>
+	<date><%= episode.date.to_s(:xshort) %></date>
+
+  <img src="<%= episode.art_location %>" />
+</header>
+
+
+<div class="file">
+	<audio controls>
+	  <source src="<%= episode.file_location %>" type="audio/mpeg">
+	Your browser does not support the audio element. Download the file via the link below instead.
+	</audio>
+	<a href="<%= episode.file_location %>">Download File</a>
+</div>
+
+<p class="description">
+  <%= episode.description.html_safe %>
+</p>
+
+<h3>Show notes:</h3>
+<p>
+  <%= episode.show_notes.html_safe %>
+</p>
+
+</article>
+
+<% if !session[:user_id].blank? %>
+	<%= link_to 'Edit', edit_episode_path(episode) %> |
+	<%= link_to 'Back', episodes_path %>
+<% end %>
+

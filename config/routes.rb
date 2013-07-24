@@ -1,5 +1,7 @@
 Onlypodcast::Application.routes.draw do
 		
+	get 'onlypodcast/:episode_num', to: redirect('/%{episode_num}') 
+	
 	match 'admin', :to => 'access#menu'
     
   match 'feeds/:slug', :to => 'feeds#show', :as => 'feed'

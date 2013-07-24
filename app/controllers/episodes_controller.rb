@@ -24,8 +24,7 @@ class EpisodesController < ApplicationController
   end
 
   def home
-    @episode = Episode.last
-    render :action => "feature"
+    @episodes = Episode.where(:podcast_id => 1).order('number DESC').limit(3)
   end
 
   def feature

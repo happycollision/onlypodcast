@@ -1,33 +1,6 @@
 <% 
 	@page_title = @episode.title 
 	@page_description = @episode.description
+	@page_image = @episode.art_location
 %>
-<article>
-
-<header class="clearfix">
-	<h2>Episode <%= @episode.number %>: <%= @episode.title %></h2>
-	<date><%= @episode.date.to_s(:long) %></date>
-
-  <img src="<%= @episode.art_location %>" />
-</header>
-
-
-<audio controls>
-  <source src="<%= @episode.file_location %>" type="audio/mpeg">
-Your browser does not support the audio element. Download the file via the link below instead.
-</audio>
-<a href="<%= @episode.file_location %>">Download File</a>
-
-
-<h3>Show notes:</h3>
-<p>
-  <%= @episode.description.html_safe %>
-  <%= @episode.show_notes.html_safe %>
-</p>
-
-</article>
-
-<% if !session[:user_id].blank? %>
-	<%= link_to 'Edit', edit_episode_path(@episode) %> |
-	<%= link_to 'Back', episodes_path %>
-<% end %>
+<%= render :partial => 'feature', :locals => {:episode => @episode} %> 
