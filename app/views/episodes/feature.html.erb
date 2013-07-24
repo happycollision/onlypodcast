@@ -27,5 +27,7 @@ Your browser does not support the audio element. Download the file via the link 
 
 </article>
 
-<%= link_to 'Edit', edit_episode_path(@episode) %> |
-<%= link_to 'Back', episodes_path %>
+<% if !session[:user_id].blank? %>
+	<%= link_to 'Edit', edit_episode_path(@episode) %> |
+	<%= link_to 'Back', episodes_path %>
+<% end %>

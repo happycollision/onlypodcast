@@ -2,7 +2,7 @@ Onlypodcast::Application.routes.draw do
 		
 	match 'admin', :to => 'access#menu'
     
-  match 'feeds/:slug', :to => 'feeds#show'
+  match 'feeds/:slug', :to => 'feeds#show', :as => 'feed'
   
   resources :personalities
 
@@ -12,9 +12,9 @@ Onlypodcast::Application.routes.draw do
 
   get "home/index"
 
-  get 'all' => 'episodes#list'
+  match 'all' => 'episodes#list', :as => 'episodes_list'
   
-  get ':episode_num', to: 'episodes#feature'
+  get ':episode_num', to: 'episodes#feature', as: 'feature'
     
   # match 'id/:id', to: 'episodes#inspect', as: 'episode'
   
