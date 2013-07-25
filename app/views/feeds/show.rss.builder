@@ -39,7 +39,7 @@ xml.rss 'version' => "2.0", 'xmlns:dc' => "http://purl.org/dc/elements/1.1/", 'x
 				xml.content :encoded, "<h3>Show Notes:</h3> #{ep.description} #{ep.show_notes}"
         xml.itunes :author, @podcast.author
         xml.itunes :duration, ep.duration
-        xml.itunes :subtitle, ep.title
+        xml.itunes :subtitle, ep.xml_subtitle
         xml.itunes :summary, ep.description
         # xml.itunes :explicit, ep.explicit.yesno
         xml.itunes :keywords, ep.keywords
