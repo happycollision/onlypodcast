@@ -35,8 +35,8 @@ xml.rss 'version' => "2.0", 'xmlns:dc' => "http://purl.org/dc/elements/1.1/", 'x
         xml.pubDate ep.date.to_s(:rfc822)
         xml.author 'don@happycollision.com (Don Denton)'
         xml.description strip_tags(ep.description)
-        xml.enclosure :url => "http://#{request.host_with_port}/files/#{@podcast.slug}/#{ep.file_location}", :length => ep.file_size, :type => 'audio/mpeg'
-				xml.content :encoded, "&lt;h3&gt;Show Notes:&lt;/h3&gt; #{ep.description} #{ep.show_notes}"
+        xml.enclosure :url => ep.file_location, :length => ep.file_size, :type => 'audio/mpeg'
+				xml.content :encoded, "<h3>Show Notes:</h3> #{ep.description} #{ep.show_notes}"
         xml.itunes :author, @podcast.author
         xml.itunes :duration, ep.duration
         xml.itunes :subtitle, ep.title

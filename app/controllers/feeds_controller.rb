@@ -7,7 +7,7 @@ class FeedsController < ApplicationController
 	
 	def show
 		@podcast = Podcast.where(:slug => params[:slug])[0]
-		@podcast.episodes.reverse!
+		@podcast.episodes
 		
 # 		respond_to do |format|
 #       format.rss {render :layout => false} # master.rss.builder (?)
